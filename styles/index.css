@@ -308,6 +308,27 @@ main > section > a {
     object-fit: cover;
 }
 
+#valores > aside article img {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#valores > aside article button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-acento-morado);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#valores > aside article button:hover {
+    background-color: #7a3fa0; /* un morado más oscuro al hover */
+}
+
 
 /* BOTONES GENERALES */
 
