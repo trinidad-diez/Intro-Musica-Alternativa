@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=UnifrakturMaguntia&display=swap');
+
+:root {
+    --color-fondo: #461D3A; /* Brown Coffee */
+    --color-tarjeta: #502A50; /* Japanese Violet */
+    --color-texto: #ECD0EC; /* Classic Rose */
+    --color-texto-muted: #BA71A2; /* Pearly Purple */
+    --color-acento-rosa: #7E2A53; /* Dark Raspberry */
+    --color-acento-morado: #7E2A53; /* Dark Raspberry */
+    --color-acento-verde: #FF4500; /* Naranja */
+    --color-borde: rgba(236, 208, 236, 0.1); /* Lightened Classic Rose */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    align-items: center;
+}
+
+a {
+    color: var(--color-acento-rosa);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: auto;
+}
+
+a:hover {
+    color: white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.degradado{
+    background: linear-gradient(90deg, var(--color-acento-rosa), var(--color-acento-morado));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}  
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: white;
+    font-weight: 700;
+    font-family: "UnifrakturMaguntia", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+h2{
+    line-height: 1;
+}
+
+.cursiva {
+    font-family: "Cedarville Cursive", cursive !important;
+    font-style: normal;
+}
+
+section.banner,
+aside{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main{
+    margin: auto;
+    max-width: 80%;
+}
+
+
+header, footer{
+    width: 100%;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: rgba(8, 5, 12, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-borde);
+    max-width: 100%;
+}
+
+header .navbar {
+    display: flex;
+    list-style: none;
+}
+
+header .navbar a.botonNav {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-texto-muted);
+    margin-inline-end: 5em;
+}
+
+header .navbar a.botonNav:hover {
+    color: white;
+    background-color: var(--color-acento-morado);
+    border-radius: 3px;
+}
+
+footer {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-texto-muted);
+    font-size: 0.9rem;
+}
+
+footer h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}

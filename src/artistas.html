@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música Alternativa - una pequeña guía (by Trini)</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/artistas.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="imagenNAV">
+            <h1>Música <span>Alternativa</span></h1>
+        </a>
+        <nav>
+            <ul class="navbar">
+                <li><a class="botonNav" href="/src/index.html">Home</a></li>
+                <li><a class="botonNav" href="#generos-musicales">Géneros Musicales</a></li>
+                <li><a class="botonNav" href="#artistas-destacados.html">Artistas</a></li>
+                <li><a class="botonNav" href="/src/contacto.html">Contacto</a></li>
+                <li><a class="botonNav" href="/src/alta.html">Alta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+ <section>
+        <h1>Artistas </h2>
+            <div id="artistas-destacados">
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR08JWMWz9fokxJwbntY8Y2d4G-Rg9HCURzrA&s"
+                        alt="Foto de Mastodon">
+                    <h4>Mastodon</h4>
+                    <p>Banda estadounidense de metal progresivo y sludge, reconocida por su virtuosismo y conceptos
+                        épicos.
+                    </p>
+                    <p><a href="/generos/progressive-metal.html">Progressive/Sludge Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Foto de Eyehategod">
+                    <h4>Eyehategod</h4>
+                    <p>Grupo pionero del sludge metal, con riffs pesados y letras cargadas de desesperanza y furia.</p>
+                    <p><a href="/generos/sludge-metal.html">Sludge Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn9tdpY3JiCiT4X2XCmvH1J0j_0JzLQb4s9Q&s"
+                        alt="Foto de Electric Wizard">
+                    <h4>Electric Wizard</h4>
+                    <p>Banda de doom/stoner metal británica, famosa por su sonido oscuro, denso y psicodélico.</p>
+                    <p><a href="/generos/doom-metal.html">Doom/Stoner Metal</a> • ★★★★★</p>
+                </article>
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoc-TSi4U3XjGb2Lo6NmsfC2HrhBmYEdS02Q&s"
+                        alt="Foto de Stone Temple Pilots">
+                    <h4>Stone Temple Pilots</h4>
+                    <p>Iconos del grunge/rock alternativo de los 90, con riffs potentes y melodías memorables.</p>
+                    <p><a href="/generos/grunge.html">Grunge/Alt Rock</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC4DE_AvNI9Q2aysh3pqGAZr99KJaZVcAXBA&s"
+                        alt="Foto de Silverchair">
+                    <h4>Silverchair</h4>
+                    <p>Banda australiana de grunge/post-grunge, conocida por su evolución musical desde adolescentes
+                        prodigio.</p>
+                    <p><a href="/generos/grunge.html">Grunge/Post-grunge</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://i.scdn.co/image/ab6761610000e5eb26b0e5c2aba8d5a49b8b14bc"
+                        alt="Foto de Suffocation">
+                    <h4>Suffocation</h4>
+                    <p>Pioneros del brutal death metal, conocidos por sus riffs complejos y blast beats vertiginosos.
+                    </p>
+                    <p><a href="/generos/death-metal.html">Death Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsEIPeYviSyBL-vRzifm7EXpFdRItNx1Ougg&s"
+                        alt="Foto de Cattle Decapitation">
+                    <h4>Cattle Decapitation</h4>
+                    <p>Death/grind extremo con temática ambientalista y letras provocadoras.</p>
+                    <p><a href="/generos/death-metal.html">Death/Grind Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiiev6zol9y1TPQOdr57J9ses7WWC3BMTlRQ&s"
+                        alt="Foto de Crowbar">
+                    <h4>Crowbar</h4>
+                    <p>Banda de sludge metal de Nueva Orleans, con riffs lentos, pesados y atmósferas opresivas.</p>
+                    <p><a href="/generos/sludge-metal.html">Sludge Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj1Ii2ad0_Wthe4t50SS5ZMEWkA73X6UUjOg&s"
+                        alt="Foto de Acid Bath">
+                    <h4>Acid Bath</h4>
+                    <p>Mezcla de sludge, doom y death metal con un estilo oscuro y psicodélico.</p>
+                    <p><a href="/generos/sludge-metal.html">Sludge/Doom Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj03oj6xnwGkCqPfIv6scnILS04ulIP3ldwA&s"
+                        alt="Foto de Lunachicks">
+                    <h4>Lunachicks</h4>
+                    <p>Punk rock femenino con actitud irreverente y letras satíricas y críticas.</p>
+                    <p><a href="/generos/punk.html">Punk</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW18Q61BoYMJRSa2_owdLLWJA5AWc1GriOSw&s"
+                        alt="Foto de Seether">
+                    <h4>Seether</h4>
+                    <p>Banda post-grunge/southern rock de Sudáfrica, conocida por baladas pesadas y riffs contundentes.
+                    </p>
+                    <p><a href="/generos/post-grunge.html">Post-grunge</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtegrp67PBhxOEyukSn9vWgZCUA-cHj_JUSw&s"
+                        alt="Foto de Meshuggah">
+                    <h4>Meshuggah</h4>
+                    <p>Banda sueca de metal progresivo/extremo, pionera del djent con ritmos complejos y polirritmos.
+                    </p>
+                    <p><a href="/generos/progressive-metal.html">Progressive/Extreme Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz74lhYdy5OhFxZ1bC3ELCZoD0DC0Z8rzESw&s"
+                        alt="Foto de Slayer">
+                    <h4>Slayer</h4>
+                    <p>Uno de los cuatro grandes del thrash metal, reconocidos por su velocidad, agresividad y
+                        oscuridad.</p>
+                    <p><a href="/generos/thrash-metal.html">Thrash Metal</a> • ★★★★★</p>
+                </article>
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wHS5jFH2HJrAVp2nBIEOm3o2TGPCuBT7KA&s"
+                        alt="Foto de Whirr">
+                    <h4>Whirr</h4>
+                    <p>Banda de shoegaze conocida por su sonido denso y atmosférico.</p>
+                    <p><a href="/generos/indie.html">Indie</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKDY1pg_-f5_90-UAcWGARDBMoQkZBhEkknw&s"
+                        alt="Foto de Julie">
+                    <h4>Julie</h4>
+                    <p>Trío emergente que mezcla shoegaze abrasivo con noise moderno.</p>
+                    <p><a href="/generos/indie.html">Indie</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj4Z08fBsFQ0CWiBaq7HQFcDmG9Czrnv9uch6rQJ32DulQhbUap-NmtVnMK9LTfCImpkI&usqp=CAU"
+                        alt="Foto de A Perfect Circle">
+                    <h4>A Perfect Circle</h4>
+                    <p>Proyecto alternativo de Maynard Keenan, con un sonido oscuro y elegante.</p>
+                    <p><a href="/generos/hard-rock.html">Hard Rock</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTB7areAJyiWnFzGOo8mNypWl9tf3YPYKLk6A&s"
+                        alt="Foto de Smashing Pumpkins">
+                    <h4>Smashing Pumpkins</h4>
+                    <p>Iconos del rock alternativo con guitarras densas y estética poética.</p>
+                    <p><a href="/generos/grunge.html">Grunge</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://i.guim.co.uk/img/static/sys-images/guardian/Pix/pictures/2011/3/9/1299671749750/Mike-Starr-Jerry-Cantrell-007.jpg?width=465&dpr=1&s=none&crop=none"
+                        alt="Foto de Alice in Chains">
+                    <h4>Alice in Chains</h4>
+                    <p>Una de las bandas clave del sonido Seattle, conocida por sus armonías oscuras.</p>
+                    <p><a href="/generos/grunge.html">Grunge</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://cdn.britannica.com/76/274776-050-F1341BCE/Rock-Band-Soundgarden-Member-Kim-Thayil-Chris-Cornell-Ben-Shepherd-And-Matt-Cameron.jpg"
+                        alt="Foto de Soundgarden">
+                    <h4>Soundgarden</h4>
+                    <p>Pioneros del grunge con influencias del metal y la psicodelia.</p>
+                    <p><a href="/generos/grunge.html">Grunge</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJnfvaE9z91YfeKRsHkzrVl_uypUZDmd20Q&s"
+                        alt="Foto de Death">
+                    <h4>Death</h4>
+                    <p>Padres del death metal moderno, liderados por Chuck Schuldiner.</p>
+                    <p><a href="/generos/death-metal.html">Death Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS23anJGKfYbt_ME7rIkEpdLR95u2GrlvzpCvnee9UYe0HH6xWOx0b5qS39QJ6la7wcdGk&usqp=CAU"
+                        alt="Foto de Cannibal Corpse">
+                    <h4>Cannibal Corpse</h4>
+                    <p>Iconos del death metal brutal, famosos por su sonido extremo.</p>
+                    <p><a href="/generos/death-metal.html">Death Metal</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSks_y5Klovd6PKBvFwhdh_N8TJ5sPA2XOhg&s"
+                        alt="Foto de Deftones">
+                    <h4>Deftones</h4>
+                    <p>Banda de culto que fusiona nü metal con atmósferas etéreas.</p>
+                    <p><a href="/generos/nu-metal.html">Nü Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Wlw01mTJ5m38zdvIB8_Kw7vr9huUs3XXxA&s"
+                        alt="Foto de Korn">
+                    <h4>Korn</h4>
+                    <p>Creadores del nü metal, reconocidos por su estilo crudo y emocional.</p>
+                    <p><a href="/generos/nu-metal.html">Nü Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7oe6ITK6GRA1XC_tEQip38Wq4iyy6HjcH7g&s"
+                        alt="Foto de Megadeth">
+                    <h4>Megadeth</h4>
+                    <p>Referentes del thrash metal técnico y políticamente crítico.</p>
+                    <p><a href="/generos/thrash-metal.html">Thrash Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqjo5X8TzBG7_aeiCuz7RvPBLkura3Udo1Yg&s"
+                        alt="Foto de Sepultura">
+                    <h4>Sepultura</h4>
+                    <p>Combinaron thrash con ritmos tribales y una identidad única.</p>
+                    <p><a href="/generos/thrash-metal.html">Thrash Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://i.scdn.co/image/ab6761610000e5ebe21999c0102c240bdf094d9b" alt="Foto de Pantera">
+                    <h4>Pantera</h4>
+                    <p>Los reyes del groove metal, liderados por la guitarra de Dimebag Darrell.</p>
+                    <p><a href="/generos/thrash-metal.html">Thrash/Groove Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://preview.redd.it/today-i-learned-that-the-entire-nin-band-appears-throughout-v0-pdh9j8me2lge1.jpeg?width=640&crop=smart&auto=webp&s=9eafc4f015a47ac7dce6e4c85bec8493d28d4a6b"
+                        alt="Foto de Nine Inch Nails">
+                    <h4>Nine Inch Nails</h4>
+                    <p>Proyecto industrial de Trent Reznor, innovador y experimental.</p>
+                    <p><a href="/generos/industrial-metal.html">Industrial Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_jgSuk1E4wbfncQL-sv6RADWmvHV_Y-P2dw&s"
+                        alt="Foto de KMFDM">
+                    <h4>KMFDM</h4>
+                    <p>Clásicos del industrial con ritmos electrónicos y estética antimilitarista.</p>
+                    <p><a href="/generos/industrial-metal.html">Industrial Metal</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUnOQcCZHzi0ggKAGZb53XjiX9biQWUQaOXA&s"
+                        alt="Foto de The Sisters of Mercy">
+                    <h4>The Sisters of Mercy</h4>
+                    <p>Banda referente del rock gótico y el post-punk oscuro.</p>
+                    <p><a href="/generos/post-punk.html">Post-punk</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDIA2JwDwa4PWvlCRiZTQIF6D-oLzLAL9QhQ&s"
+                        alt="Foto de London After Midnight">
+                    <h4>London After Midnight</h4>
+                    <p>Proyecto gótico con sonidos dramáticos y atmósferas densas.</p>
+                    <p><a href="/generos/post-punk.html">Post-punk</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://townsquare.media/site/366/files/2014/11/Tool.jpg?w=780&q=75" alt="Foto de TOOL">
+                    <h4>TOOL</h4>
+                    <p>Banda progresiva reconocida por su complejidad rítmica y simbolismo.</p>
+                    <p><a href="/generos/progressive-metal.html">Progressive Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQymNEfiEib8OPpLClsyt_tBLGljbdfHIoOSA&s"
+                        alt="Foto de Opeth">
+                    <h4>Opeth</h4>
+                    <p>Metal progresivo que fusiona lo extremo con lo acústico y lo melódico.</p>
+                    <p><a href="/generos/progressive-metal.html">Progressive Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://pm1.aminoapps.com/6749/5ae43ec7a149d2e832f835448a4add8dc108b4a6v2_hq.jpg"
+                        alt="Foto de Katatonia">
+                    <h4>Katatonia</h4>
+                    <p>Banda sueca de rock/metal melancólico con atmósferas profundas.</p>
+                    <p><a href="/generos/progressive-metal.html">Progressive/Alt Metal</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqPEa78phJHuGPGyAwh2wpGt_CnYspcpZPkTJgyOHU0nGYV8Lq2V9AmgUuCJeDYWyadQ&usqp=CAU"
+                        alt="Foto de Staind">
+                    <h4>Staind</h4>
+                    <p>Banda post-grunge conocida por sus letras emocionales y sonido melódico.</p>
+                    <p><a href="/generos/post-grunge.html">Post-grunge</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhOQgIRYQeStk1LPNnvObr0iif6IE79gNp-A&s"
+                        alt="Foto de Godsmack">
+                    <h4>Godsmack</h4>
+                    <p>Post-grunge con tintes metálicos y un sonido muy orientado al riff.</p>
+                    <p><a href="/generos/post-grunge.html">Post-grunge</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZyvmZ_W2I_L0whWcqIMlL_0vSjkT1GA0BPA&s"
+                        alt="Foto de Suicidal Tendencies">
+                    <h4>Suicidal Tendencies</h4>
+                    <p>Banda clave del crossover punk/thrash, energética y socialmente crítica.</p>
+                    <p><a href="/generos/punk.html">Punk</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSkH3hr1XTvd3a9Py_3AI55ihXoVse9bMNeg&s"
+                        alt="Foto de Black Flag">
+                    <h4>Black Flag</h4>
+                    <p>Pioneros del hardcore punk con una actitud radical y DIY.</p>
+                    <p><a href="/generos/punk.html">Punk</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRie8YzeWNN1ZdSTw0dMnvfjr7n5ydTpHCnNA&s"
+                        alt="Foto de My Chemical Romance">
+                    <h4>My Chemical Romance</h4>
+                    <p>Iconos del emo moderno, conocidos por su estética teatral.</p>
+                    <p><a href="/generos/emo.html">Emo</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3hXZtWBrzOBLyUH0Ck5T4jy1ULK_PxTJ7Yw&s"
+                        alt="Foto de Hawthorne Heights">
+                    <h4>Hawthorne Heights</h4>
+                    <p>Banda emo/post-hardcore con letras tristes y melodías intensas.</p>
+                    <p><a href="/generos/emo.html">Emo</a> • ★★★★☆</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6rzKY21Imfo4E5jyYVRcEpIlVhF2krY9hcQ&s"
+                        alt="Foto de Bring Me the Horizon">
+                    <h4>Bring Me the Horizon</h4>
+                    <p>Metal moderno y experimental con mezclas de electrónica y metalcore.</p>
+                    <p><a href="/generos/progressive-metal.html">Progressive/Metalcore</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8NKMGTxOUt5U-yeNXZrSyL3FsRwW1KILMQ&s"
+                        alt="Foto de Pierce the Veil">
+                    <h4>Pierce the Veil</h4>
+                    <p>Banda post-hardcore conocida por su energía emocional y voces agudas.</p>
+                    <p><a href="/generos/emo.html">Emo/Post-hardcore</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzw7hshXLb-CP3zn68P9d6xENy_gNAmJtpwQ&s"
+                        alt="Foto de Bikini Kill">
+                    <h4>Bikini Kill</h4>
+                    <p>Pioneras del movimiento Riot Grrrl y del activismo feminista punk.</p>
+                    <p><a href="/generos/riot-grrrl.html">Riot-grrrl</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdct-SerWNQ9WvpSO2DedxJ4jxjvaafkn_nA&s"
+                        alt="Foto de Babes in Toyland">
+                    <h4>Babes in Toyland</h4>
+                    <p>Banda de punk alternativo con crudeza, rabia y espíritu riot.</p>
+                    <p><a href="/generos/riot-grrrl.html">Riot-grrrl</a> • ★★★★★</p>
+                </article>
+                <article>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDKp-vNyqzsbo7YtqvYzgLv57Afvqn7PxAQQ&s"
+                        alt="Foto de Slowdive">
+                    <h4>Slowdive</h4>
+                    <p>Banda icónica de shoegaze con atmósferas etéreas y capas densas de guitarras.</p>
+                    <p><a href="/generos/shoegaze.html">Shoegaze</a> • ★★★★★</p>
+                </article>
+
+                <article>
+                    <img src="https://rockandrollglobe.com/wp-content/uploads/2021/11/image3A37090_Glitch.jpg"
+                        alt="Foto de My Bloody Valentine">
+                    <h4>My Bloody Valentine</h4>
+                    <p>Pioneros del shoegaze, conocidos por su innovador uso de guitarras distorsionadas y texturas
+                        sonoras envolventes.</p>
+                    <p><a href="/generos/shoegaze.html">Shoegaze</a> • ★★★★★</p>
+                </article>
+            </div>
+    </section>
+    </main>
+   
+    <footer>
+        <h3>Música Alternativa - una pequeña guía</h3>
+        <p>Contacto • +34 645 659 372</p>
+        <p>© 2025 Música Alternativa - una pequeña guía • C/ Aiguablava, 123 - Barcelona</p>
+    </footer>
+
+</body>
+
+</html>

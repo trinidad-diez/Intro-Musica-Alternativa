@@ -1,0 +1,57 @@
+:root {
+    --color-fondo: #461D3A; /* Brown Coffee */
+    --color-tarjeta: #502A50; /* Japanese Violet */
+    --color-texto: #ECD0EC; /* Classic Rose */
+    --color-texto-muted: #BA71A2; /* Pearly Purple */
+    --color-acento-rosa: #7E2A53; /* Dark Raspberry */
+    --color-acento-morado: #7E2A53; /* Dark Raspberry */
+    --color-acento-verde: #FF4500; /* Naranja */
+    --color-borde: rgba(236, 208, 236, 0.1); /* Lightened Classic Rose */
+}
+
+h2{
+    margin: 2em;
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    align-content: center;
+}
+
+
+article {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: column; /* Para poner imagen y título en columna */
+    align-items: center; /* Centra todo dentro del artículo */
+    justify-content: space-between; /* Distribuye espacio entre la imagen y el título */
+    width: 20%;
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    margin: 1em;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+#generos-musicales article:hover {
+    border-color: var(--color-acento-rosa);
+}
+
+#generos-musicales article img {
+    width: 15em;
+    height: 15em;
+    border-radius: 10%;
+    object-fit: cover;
+    margin-bottom: 1rem; /* Agrega separación entre la imagen y el título */
+}
+
+#generos-musicales article h4 {
+    font-size: 1.1rem;
+    color: var(--color-texto); /* Color del texto */
+}
+

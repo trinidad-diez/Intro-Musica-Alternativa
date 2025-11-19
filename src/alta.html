@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Música Alternativa - Alta Newsletter</title>
+</head>
+<body>
+    <section class="newsletter-signup" aria-labelledby="newsletter-heading">
+        <h1 id="newsletter-heading">Únete a nuestro newsletter de Música Alternativa!</h1>
+        <p>Recibe novedades, lanzamientos y playlists seleccionadas.</p>
+
+
+        <form id="signup-form" action="/subscribe" method="post" autocomplete="on" novalidate>
+            <div>
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required minlength="2" placeholder="Ej. Juana Pérez">
+            </div>
+
+            <div>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com">
+            </div>
+
+            <fieldset>
+                <legend>Géneros que te interesan (al menos uno)</legend>
+                <div>
+
+                    <input type="checkbox" id="indie" name="genres" value="Indie">
+                    <label for="indie">Goth</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="shoegaze" name="genres" value="Shoegaze">
+                    <label for="shoegaze">Shoegaze</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="postpunk" name="genres" value="Post-punk">
+                    <label for="postpunk">Post-punk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="electronica" name="genres" value="Electronica">
+                    <label for="electronica">Metal</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="otros" name="genres" value="Otros">
+                    <label for="otros">Grunge</label>
+                </div>
+            </fieldset>
+
+            <div>
+                <label for="frequency">Frecuencia</label>
+                <select id="frequency" name="frequency">
+                    <option value="weekly">Semanal</option>
+                    <option value="monthly" selected>Mensual</option>
+                    <option value="occasionally">Ocasionalmente</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="city">Ciudad (opcional)</label>
+                <input type="text" id="city" name="city" placeholder="Ciudad">
+            </div>
+
+            <div>
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">Acepto recibir correos relacionados con el newsletter y la política de privacidad.</label>
+            </div>
+
+            <button type="submit">Suscribirme</button>
+
+            <p id="form-message" role="status" aria-live="polite" style="display:none"></p>
+        </form>
+    </section>
+</body>
+</html>
