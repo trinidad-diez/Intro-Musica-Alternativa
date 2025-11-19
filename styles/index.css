@@ -1,12 +1,14 @@
+/* BANNER */
+
 section.banner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 3rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding: 3rem 0;
 }
 
+/* Textos del banner */
 section.banner .banner-texto h2 {
     font-size: 2.5rem;
     font-weight: 800;
@@ -20,53 +22,53 @@ section.banner .banner-texto h3 {
     margin-bottom: 1.5rem;
 }
 
-section.banner .banner-texto strong {
+section.banner .banner-texto strong,
+section.banner .banner-texto em {
     color: white;
-    font-weight: 600;
 }
 
 section.banner .banner-texto em {
-    color: white;
     font-style: italic;
 }
 
+/* Botones principales */
 section.banner .botones-principales {
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
 }
 
-section.banner .botones-principales a[href="/alta.html"] {
-    background: linear-gradient(to right, var(--color-acento-rosa), var(--color-acento-morado));
-    color: white;
+section.banner .botones-principales a {
     padding: 0.75rem 1.5rem;
     border-radius: 99px;
     font-weight: 600;
     transition: all 0.3s ease;
+}
+
+/* Botón "Alta" */
+section.banner .botones-principales a[href="/alta.html"] {
+    background: linear-gradient(to right, var(--color-acento-rosa), var(--color-acento-morado));
+    color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-section.banner .botones-principales a:hover {
+section.banner .botones-principales a[href="/alta.html"]:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(224, 73, 153, 0.3);
 }
 
+/* Botón "Ranking" */
 section.banner .botones-principales a[href="/ranking-artistas.html"] {
     background: transparent;
     border: 2px solid var(--color-acento-morado);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 99px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-
 }
 
-section.banner .botones-principales a:hover {
+section.banner .botones-principales a[href="/ranking-artistas.html"]:hover {
     background: var(--color-acento-morado);
-    color: white;
 }
 
+/* Subgéneros */
 section.banner .subgéneros-principales {
     display: flex;
     gap: 0.75rem;
@@ -81,8 +83,10 @@ section.banner .subgéneros-principales p {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--color-texto-muted);
-    align-self: center;
 }
+
+
+/* HERO IMG */
 
 .hero-img {
     width: 100%;
@@ -95,41 +99,39 @@ section.banner .subgéneros-principales p {
     background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
-    transition: 3s ease;
+    transition: background-image 3s ease;
 }
 
 .hero-img:hover {
     background-image: url('/assets/gato-ojos.png');
 }
 
+
+/* MAIN */
+
 main {
     padding-top: 2rem;
 }
 
-main>section {
+main > section {
     margin-bottom: 4rem;
-}
-
-main>section>h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-main>section>a {
-    color: var(--color-acento-rosa);
-    font-weight: 500;
-}
-
-main>section {
     position: relative;
     padding-top: 1.5rem;
 }
 
-
-main>section>h2 {
+main > section > h2 {
+    font-size: 2rem;
+    font-weight: 700;
     margin-bottom: 1.5rem;
 }
+
+main > section > a {
+    color: var(--color-acento-rosa);
+    font-weight: 500;
+}
+
+
+/* GÉNEROS MUSICALES */
 
 #generos-musicales .cajitas-generos {
     display: flex;
@@ -142,8 +144,6 @@ main>section>h2 {
     border-radius: 0.75rem;
     overflow: hidden;
     transition: all 0.3s ease;
-
-    /* Ajustes para que el texto entre y sobre espacio */
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -157,16 +157,16 @@ main>section>h2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-#generos-musicales .genero img:hover {
-    width: 120%;
-    object-fit: contain;
-}
-
 #generos-musicales .genero img {
     width: 100%;
     height: auto;
     object-fit: cover;
     flex-shrink: 0;
+}
+
+#generos-musicales .genero img:hover {
+    width: 120%;
+    object-fit: contain;
 }
 
 #generos-musicales .genero h3 {
@@ -179,7 +179,6 @@ main>section>h2 {
     font-size: 0.85rem;
     color: var(--color-texto-muted);
     margin: 0;
-    /* aseguramos que el texto quede dentro y que sobre espacio cuando haya pocas líneas */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -192,10 +191,11 @@ main>section>h2 {
 #generos-musicales .genero .info-btn {
     display: block;
     font-weight: 600;
-    margin: 0;
     margin-top: auto;
-    /* empuja el botón al fondo dejando espacio disponible para texto */
 }
+
+
+/* ARTISTAS DESTACADOS */
 
 #artistas-destacados {
     display: grid;
@@ -210,7 +210,6 @@ main>section>h2 {
     padding: 1rem;
     display: grid;
     grid-template-columns: 60px 1fr;
-    grid-template-rows: auto auto auto;
     grid-template-areas:
         "img titulo"
         "img desc"
@@ -239,78 +238,87 @@ main>section>h2 {
     align-self: end;
 }
 
-/* Contenedor que coloca section y aside lado a lado */
-#festivales {
+
+/* VALORES (section + aside) */
+/* SECCIÓN DE VALORES (LAYOUT PRINCIPAL) */
+#valores {
     display: flex;
-    gap: 2rem;
+    gap: 2rem; /* separación entre section y aside */
     align-items: flex-start;
     margin-top: 2rem;
 }
 
-/* Que el section ocupe más espacio */
-#festivales > section {
+/* CONTENEDOR PRINCIPAL DE VALORES */
+#valores > section {
     flex: 7;
 }
 
-/* Que el aside sea más estrecho */
-#festivales > aside {
+/* ASIDE */
+#valores > aside {
     flex: 3;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-/* Opcional: tarjetas dentro del aside */
-#festivales h2{
+/* TITULO PRINCIPAL */
+#valores h2 {
     margin-bottom: 1em;
 }
-#festivales > aside article {
+
+/* TARJETAS DENTRO DEL ASIDE */
+#valores > aside article {
     background: var(--color-tarjeta);
     border: 1px solid var(--color-borde);
     padding: 1rem;
     border-radius: 0.75rem;
 }
 
-.festivales {
+/* CONTENEDOR DE TARJETAS DE VALORES */
+.valores {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-wrap: wrap; /* permite que las tarjetas bajen a otra fila si no caben */
+    gap: 2rem; /* separación entre tarjetas */
+    justify-content: center; /* centrado horizontal */
     width: 100%;
-    justify-content: center;
 }
 
-.festival {
+/* TARJETAS DE VALORES */
+.valor {
     background-color: var(--color-acento-morado);
     border: 1px solid var(--color-borde);
     border-radius: 1rem;
     padding: 1.5rem;
-    width: 20em;
+    width: 20em; /* ancho fijo para las tarjetas */
     text-align: center;
+    color: #fff; /* texto blanco para contraste */
     transition: all 0.3s ease;
 }
 
-/* Hover corregido */
-.festival:hover {
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+/* EFECTO HOVER EN LAS TARJETAS */
+.valor:hover {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
 }
 
-/* Imagen */
-.festival img {
+/* IMÁGENES DENTRO DE LAS TARJETAS */
+.valor img {
     width: 100%;
     border-radius: 0.75rem;
     object-fit: cover;
 }
 
-button{
+
+/* BOTONES GENERALES */
+
+button {
     background-color: var(--color-texto-muted);
     border-radius: 5em;
-    border-color: var(--color-acento-morado);
-    padding: 1em 2em 1em 2em;
+    border: 1px solid var(--color-acento-morado);
+    padding: 1em 2em;
     font-size: 1em;
 }
 
-button:hover{
+button:hover {
     background-color: var(--color-acento-rosa);
 }
-
