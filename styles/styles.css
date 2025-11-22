@@ -1,54 +1,65 @@
+/* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
+/* Paleta de colores */
 :root {
-    --color-fondo: #461D3A; /* Brown Coffee */
-    --color-tarjeta: #502A50; /* Japanese Violet */
-    --color-texto: #ECD0EC; /* Classic Rose */
-    --color-texto-muted: #BA71A2; /* Pearly Purple */
-    --color-acento-rosa: #7E2A53; /* Dark Raspberry */
-    --color-acento-morado: #7E2A53; /* Dark Raspberry */
-    --color-acento-verde: #FF4500; /* Naranja */
-    --color-borde: rgba(236, 208, 236, 0.1); /* Lightened Classic Rose */
+    --color-fondo: #461D3A;
+    --color-tarjeta: #502A50;
+    --color-texto: #ECD0EC;
+    --color-texto-muted: #BA71A2;
+    --color-acento-rosa: #7E2A53;
+    --color-acento-morado: #7E2A53;
+    --color-acento-verde: #FF4500;
+    --color-borde: rgba(236, 208, 236, 0.1);
+    --color-header-footer: rgba(8, 5, 12, 0.8);
+    /* Color de fondo header y footer */
+    --color-link-hover: white;
+    /* Color hover de los enlaces */
 }
 
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
+/* Links nav */
 a {
     color: var(--color-acento-rosa);
     text-decoration: none;
     transition: color 0.3s ease;
-    margin: auto;
 }
 
 a:hover {
-    color: white;
+    color: var(--color-link-hover);
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-.degradado{
-    background: linear-gradient(90deg, var(--color-acento-rosa), var(--color-acento-morado));
+/* Degradado */
+.degradado {
+    background: linear-gradient(90deg, var(--color-acento-rosa), var(--color-acento-morado)); 
+    background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}  
+    color: transparent; 
+    -webkit-text-fill-color: transparent; 
+    display: inline;
+}
 
+
+/* Títulos */
 h1,
 h2,
 h3,
@@ -56,14 +67,13 @@ h4,
 h5,
 h6 {
     color: white;
-    font-weight: 700;
     font-family: "UnifrakturMaguntia", cursive;
     font-weight: 400;
     font-style: normal;
     text-align: center;
 }
 
-h2{
+h2 {
     line-height: 1;
 }
 
@@ -72,8 +82,9 @@ h2{
     font-style: normal;
 }
 
+/* Contenedor principal */
 section.banner,
-aside{
+aside {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -81,32 +92,33 @@ aside{
     padding-right: 1rem;
 }
 
-main{
+/* Main content */
+main {
     margin: auto;
     max-width: 80%;
 }
 
-
-header, footer{
+/* Header y Footer */
+header,
+footer {
     width: 100%;
 }
 
-
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem;
     position: sticky;
     top: 0;
     z-index: 50;
-    background-color: rgba(8, 5, 12, 0.8);
+    background-color: var(--color-header-footer);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-borde);
-    max-width: 100%;
 }
 
+/* Navbar */
 header .navbar {
     display: flex;
     list-style: none;
@@ -117,14 +129,16 @@ header .navbar a.botonNav {
     font-weight: 500;
     color: var(--color-texto-muted);
     margin-inline-end: 5em;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 header .navbar a.botonNav:hover {
-    color: white;
+    color: var(--color-link-hover);
     background-color: var(--color-acento-morado);
     border-radius: 3px;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding-top: 3rem;
@@ -143,4 +157,71 @@ footer h3 {
 
 footer p {
     margin: 0.25rem 0;
+}
+
+/* Mejoras generales en layout */
+section.banner,
+aside {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .navbar a.botonNav {
+        margin-inline-end: 0;
+        margin-bottom: 10px;
+    }
+
+    .degradado {
+        font-size: 1.5rem;
+    }
+
+    main {
+        max-width: 95%;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+
+.neon-text:hover{
+    color: var(--color-texto);
+    text-shadow:
+        0 0 5px var(--color-acento-rosa),
+        0 0 10px var(--color-acento-rosa),
+        0 0 20px var(--color-acento-rosa),
+        0 0 40px var(--color-acento-rosa),
+        0 0 80px var(--color-acento-rosa);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow:
+            0 0 5px var(--color-acento-rosa),
+            0 0 10px var(--color-acento-rosa),
+            0 0 20px var(--color-acento-rosa),
+            0 0 40px var(--color-acento-rosa),
+            0 0 80px var(--color-acento-rosa);
+    }
+
+    100% {
+        text-shadow:
+            0 0 10px var(--color-acento-morado),
+            0 0 20px var(--color-acento-morado),
+            0 0 40px var(--color-acento-morado),
+            0 0 80px var(--color-acento-morado),
+            0 0 160px var(--color-acento-morado);
+    }
 }
