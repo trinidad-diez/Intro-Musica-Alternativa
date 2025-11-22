@@ -3,53 +3,111 @@
     --color-tarjeta: #502A50; /* Japanese Violet */
     --color-texto: #ECD0EC; /* Classic Rose */
     --color-texto-muted: #BA71A2; /* Pearly Purple */
-    --color-acento-rosa: #7E2A53; /* Dark Raspberry */
-    --color-acento-morado: #7E2A53; /* Dark Raspberry */
-    --color-acento-verde: #FF4500; /* Naranja */
-    --color-borde: rgba(236, 208, 236, 0.1); /* Lightened Classic Rose */
+    --color-acento-rosa: #FF6FA3; /* Accent pink */
+    --color-acento-morado: #7E2A53; /* Dark Raspberry / purple accent */
+    --color-acento-verde: #4CAF50; /* Green accent */
+    --color-borde: rgba(236, 208, 236, 0.12); /* Lightened Classic Rose */
 }
 
+/* Global box-sizing reset to avoid width/overflow issues */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Page layout */
 main {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: var(--color-fondo);
 }
 
+/* Container for featured artists */
 #artistas-destacados {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
+/* Card styles */
 article {
     display: flex;
     flex-direction: column; /* Para poner imagen y título en columna */
     align-items: center; /* Centra todo dentro del artículo */
     justify-content: space-between; /* Distribuye espacio entre la imagen y el título */
-    width: 20%;
+    flex: 1 1 200px; /* Flexible, mínimo 200px */
+    max-width: 220px;
     background-color: var(--color-tarjeta);
     border: 1px solid var(--color-borde);
     border-radius: 0.75rem;
     padding: 1rem;
-    transition: all 0.3s ease;
-    margin: 1em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    margin: 0.5rem;
     text-align: center; /* Asegura que el texto esté centrado */
+    color: var(--color-texto);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-#artistas-destacados article:hover {
+/* Hover / focus effects */
+#artistas-destacados article:hover,
+#artistas-destacados article:focus-within {
     border-color: var(--color-acento-rosa);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
+/* Image */
 #artistas-destacados article img {
-    width: 10em;
-    height: 10em;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem; /* Agrega separación entre la imagen y el título */
+    display: block;
 }
 
+/* Title */
 #artistas-destacados article h4 {
     font-size: 1.1rem;
     color: var(--color-texto); /* Color del texto */
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Small screens adjustments */
+@media (max-width: 600px) {
+    article {
+        flex: 1 1 140px;
+        max-width: 160px;
+        padding: 0.75rem;
+    }
+
+    #artistas-destacados article img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    article {
+        transition: none;
+    }
 }
 
