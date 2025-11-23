@@ -1,6 +1,5 @@
 /* FUENTES */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=UnifrakturMaguntia&display=swap');
 
 /* Paleta de colores */
@@ -11,7 +10,7 @@
     --color-texto-muted: #BA71A2;
     --color-acento-rosa: #7E2A53;
     --color-acento-morado: #7E2A53;
-    --color-acento-verde: #FF4500;
+    --color-acento-verde: #3BA55D; /* ajustado a un verde coherente */
     --color-borde: rgba(236, 208, 236, 0.1);
 }
 
@@ -21,8 +20,10 @@
     padding: 2rem;
     border-radius: 8px;
     width: 100%;
-    max-width: 50%;
+    max-width: 50em;
+    margin: 4em auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
 .newsletter-signup p {
@@ -32,13 +33,9 @@
     text-align: center;
 }
 
-/* Inputs y campos */
-form div {
+/* Inputs y campos (específicos para el componente) */
+.newsletter-signup form div {
     margin-bottom: 1.5rem;
-}
-
-/* Asegurar que los checkboxes estén en la misma línea */
-form div {
     display: flex;
     align-items: center; /* Alinea los checkboxes y labels verticalmente */
     flex-wrap: wrap; /* Para que si no caben, pasen a la siguiente línea */
@@ -49,7 +46,6 @@ label {
     display: inline-block;
     color: var(--color-texto);
     font-weight: 600;
-    margin-bottom: 0.5rem;
 }
 
 input[type="text"],
@@ -60,20 +56,20 @@ select {
     border: 1px solid var(--color-borde);
     border-radius: 4px;
     background-color: #fff;
-    color: var(--color-texto);
+    color: #111;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 input[type="checkbox"] {
-    margin: 0; /* Elimina cualquier margen extra */
-    width: auto; /* Evita que los checkboxes sean demasiado grandes */
-    height: auto; /* Ajusta la altura si es necesario */
+    margin: 0; 
+    width: auto; 
+    height: auto;
 }
 
-/* Si tienes un <label> asociado, aseguramos que también estén en la misma línea */
 label[for="checkbox"] {
     display: inline-block;
-    margin: 0; /* Aseguramos que el margen sea adecuado */
+    margin: 0; 
     font-size: 1rem;
     color: var(--color-texto);
 }
@@ -102,21 +98,3 @@ button[type="submit"]:hover {
     margin-top: 1rem;
 }
 
-/* Asegurar que el formulario no tenga bordes extraños */
-input[type="checkbox"]:focus,
-input[type="text"]:focus,
-input[type="email"]:focus,
-select:focus,
-button[type="submit"]:focus {
-    outline: none;
-    border-color: var(--color-acento-rosa);
-}
-
-/* Estilo adicional para los checkboxes en la misma línea */
-input[type="checkbox"]:focus,
-input[type="text"]:focus,
-input[type="email"]:focus,
-select:focus {
-    outline: none;
-    border-color: var(--color-acento-rosa);
-}

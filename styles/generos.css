@@ -1,59 +1,102 @@
 :root {
-    --color-fondo: #461D3A; /* Brown Coffee */
-    --color-tarjeta: #502A50; /* Japanese Violet */
-    --color-texto: #ECD0EC; /* Classic Rose */
-    --color-texto-muted: #BA71A2; /* Pearly Purple */
-    --color-acento-rosa: #7E2A53; /* Dark Raspberry */
-    --color-acento-morado: #7E2A53; /* Dark Raspberry */
-    --color-acento-verde: #FF4500; /* Naranja */
-    --color-borde: rgba(236, 208, 236, 0.1); /* Lightened Classic Rose */
+    --color-fondo: #461D3A;
+    --color-tarjeta: #502A50;
+    --color-texto: #ECD0EC;
+    --color-texto-muted: #BA71A2;
+    --color-acento-rosa: #7E2A53;
+    --color-acento-verde: #FF4500;
+    --color-borde: rgba(236, 208, 236, 0.1);
 }
 
-h2{
-    margin: 2em;
+/* Global */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+h2 {
+    margin: 2rem;
     text-decoration: underline;
+    color: var(--color-texto);
 }
 
-p{
-    margin-bottom: 3em;
+p {
+    margin-bottom: 1.5rem;
+    color: var(--color-texto-muted);
 }
 
 main {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 2rem;
     width: 100%;
-    justify-content: space-around;
+    max-width: 90%; 
+    margin: 0 auto; 
 }
 
+/* Tarjetas */
 article {
+    width: 20%;
+    margin: 1.5em;
     display: inline-flex;
-    justify-content: space-around;
-    flex-direction: column; /* Para poner imagen y título en columna */
-    align-items: center; /* Centra todo dentro del artículo */
-    justify-content: space-between; /* Distribuye espacio entre la imagen y el título */
-    width: 15%;
+    flex-direction: column;
+    text-align: center;
     background-color: var(--color-tarjeta);
     border: 1px solid var(--color-borde);
     border-radius: 0.75rem;
     padding: 1rem;
-    transition: all 0.3s ease;
-    margin: 1em;
-    text-align: center; /* Asegura que el texto esté centrado */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-#generos-musicales article:hover {
+/* Hover */
+article:hover {
     border-color: var(--color-acento-rosa);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-#generos-musicales article img {
-    width: 15em;
-    height: 15em;
+/* Imágenes */
+article img {
+    width: 100%;
+    max-width: 10rem;            /* LIMITA EL TAMAÑO */
+    height: auto;
+    aspect-ratio: 1 / 1;
     border-radius: 10%;
     object-fit: cover;
-    margin-bottom: 1rem; /* Agrega separación entre la imagen y el título */
+    margin: 0 auto 0.75rem auto; /* CENTRA LA IMAGEN */
 }
 
-#generos-musicales article h4 {
+/* Títulos */
+article h4 {
     font-size: 1.1rem;
-    color: var(--color-texto); /* Color del texto */
+    color: var(--color-texto);
+    margin: 0.5rem 0;
 }
 
+/* Responsivo */
+@media (max-width: 80rem) {
+    article {
+        flex: 0 0 calc(33.33% - 1rem); /* 3 por fila */
+    }
+}
+
+@media (max-width: 40rem) {
+    article {
+        flex: 0 0 calc(50% - 1rem); /* 2 por fila */
+    }
+}
+
+@media (max-width: 25rem) {
+    article {
+        flex: 0 0 100%; /* 1 por fila */
+    }
+}

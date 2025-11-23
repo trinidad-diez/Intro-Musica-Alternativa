@@ -11,11 +11,9 @@
 
 /* Global box-sizing reset to avoid width/overflow issues */
 html {
-    box-sizing: border-box;
+    margin: auto;
 }
-*, *::before, *::after {
-    box-sizing: inherit;
-}
+
 
 /* Page layout */
 main {
