@@ -36,6 +36,26 @@
                 <input type="text" id="name" name="name" required minlength="2" placeholder="Ej. Juana Pérez">
             </div>
 
+            <fieldset>
+                <legend>Género</legend>
+                <div>
+                    <input type="radio" id="gender-female" name="gender" value="female" required>
+                    <label for="gender-female">Femenino</label>
+                </div>
+                <div>
+                    <input type="radio" id="gender-male" name="gender" value="male">
+                    <label for="gender-male">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="gender-other" name="gender" value="other">
+                    <label for="gender-other">Otro</label>
+                </div>
+                <div>
+                    <input type="radio" id="gender-nosp" name="gender" value="prefer-not-to-say">
+                    <label for="gender-nosp">Prefiero no decirlo</label>
+                </div>
+            </fieldset>
+
             <div>
                 <label for="email">Correo electrónico</label>
                 <input type="email" id="email" name="email" required placeholder="tú@ejemplo.com">
