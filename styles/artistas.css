@@ -32,8 +32,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    max-width: 1200px;
-    width: 100%;
+    max-width: 100em;
+    width: 90em;
     margin: 0 auto;
     padding: 0 1rem;
 }
