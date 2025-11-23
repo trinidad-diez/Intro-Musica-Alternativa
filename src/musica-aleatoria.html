@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guía de música alternativa: géneros, artistas y más.">
+    <title>Música Alternativa: Música Aleatoria - Una pequeña guía (by Trini)</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/musica-aleatoria.css">
+    <link rel="icon" href="/assets/logo.png" type="image/png">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="imagenNAV">
+            <h1>Música <span class="degradado">Alternativa</span></h1>
+        </a>
+        <nav>
+            <ul class="navbar">
+                <li><a class="botonNav" href="index.html">Home</a></li>
+                <li><a class="botonNav" href="/src/generos-musicales.html">Géneros Musicales</a></li>
+                <li><a class="botonNav" href="/src/artistas.html">Artistas</a></li>
+                <li><a class="botonNav" href="/src/contacto.html">About Me</a></li>
+                <li><a class="botonNav" href="/src/alta.html">Alta</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <section class="intro">
+            <h2>Reproductor de Música Aleatoria</h2>
+            <p>Disfruta de una selección aleatoria de pistas de música alternativa. Puedes añadir tus propios archivos
+                o usar las rutas indicadas en la lista.</p>
+        </section>
+
+        <section class="player" id="player">
+            <div class="cover" id="cover">Carátula<br>opcional</div>
+
+            <div class="meta">
+                <div>
+                    <div class="title" id="title">-</div>
+                    <div class="artist" id="artist">-</div>
+                </div>
+
+                <div class="controls">
+                    <button id="prev" title="Anterior">◀◀</button>
+                    <button id="play" class="primary" title="Reproducir/Pausar">▶</button>
+                    <button id="next" title="Siguiente">▶▶</button>
+                    <div style="width:8px"></div>
+                    <button id="shuffle" title="Aleatorio">Shuffle</button>
+                    <button id="repeat" title="Repetir">Repeat</button>
+                    <div style="flex:1"></div>
+                    <div class="add">
+                        <label for="fileInput" style="cursor:pointer;" title="Añadir archivos (local)">+ Añadir</label>
+                        <input id="fileInput" type="file" accept="audio/*" multiple>
+                    </div>
+                </div>
+
+                <div class="progress" style="margin-top:8px">
+                    <div class="time" id="current">0:00</div>
+                    <div class="bar" id="bar" title="Ir a">
+                        <i id="fill"></i>
+                    </div>
+                    <div class="time" id="duration">0:00</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="playlist" id="playlist">
+            <!-- Lista de pistas se renderiza aquí -->
+        </div>
+    </div>
+
+    <!-- Elemento audio invisible -->
+    <audio id="audio" preload="metadata"></audio>
+
+    <script>
+        // GitHub Copilot (as requested in developer instructions)
+        // Lista de ejemplo: sustituye src por rutas reales (locales o URLs de audio). Evitar enlaces a contenido con copyright sin permiso.
+        const tracks = [
+            { title: "The Ghost of You", artist: "My Chemical Romance", src: "../audio/sound_my-chemical-romance-the-ghost-of-you.mp3", cover: "https://m.media-amazon.com/images/I/81hYuA+Gh6L.jpg" },
+        ];
+
+        // Referencias DOM
+        const audio = document.getElementById('audio');
+        const titleEl = document.getElementById('title');
+        const artistEl = document.getElementById('artist');
+        const coverEl = document.getElementById('cover');
+        const playBtn = document.getElementById('play');
+        const nextBtn = document.getElementById('next');
+        const prevBtn = document.getElementById('prev');
+        const shuffleBtn = document.getElementById('shuffle');
+        const repeatBtn = document.getElementById('repeat');
+        const bar = document.getElementById('bar');
+        const fill = document.getElementById('fill');
+        const currentEl = document.getElementById('current');
+        const durationEl = document.getElementById('duration');
+        const playlistEl = document.getElementById('playlist');
+        const fileInput = document.getElementById('fileInput');
+
+        let playlist = [...tracks]; // copia inicial
+        let index = Math.floor(Math.random() * playlist.length); // pista aleatoria al cargar
+        let isShuffling = false;
+        let isRepeating = false;
+        let dragging = false;
+
+        function renderPlaylist() {
+            playlistEl.innerHTML = '';
+            playlist.forEach((t, i) => {
+                const div = document.createElement('div');
+                div.className = 'track';
+                div.innerHTML = `<div>
+                                                    <div style="font-weight:600">${t.title}</div>
+                                                    <div class="small">${t.artist}</div>
+                                                 </div>
+                                                 <div class="small">${i === index ? '→' : ''}</div>`;
+                div.addEventListener('click', () => { index = i; loadTrack(); play(); });
+                playlistEl.appendChild(div);
+            });
+        }
+
+        function loadTrack() {
+            const t = playlist[index];
+            if (!t) return;
+            audio.src = t.src;
+            titleEl.textContent = t.title || 'Desconocido';
+            artistEl.textContent = t.artist || '';
+            coverEl.textContent = t.cover ? '' : (t.title || 'Carátula');
+            if (t.cover) coverEl.style.backgroundImage = `url(${t.cover})`; else coverEl.style.backgroundImage = '';
+            updatePlaylistMarks();
+            // cargar metadata
+            audio.load();
+        }
+
+        function updatePlaylistMarks() {
+            [...playlistEl.children].forEach((el, i) => {
+                el.querySelector('div:last-child').textContent = (i === index ? '→' : '');
+            });
+        }
+
+        function play() {
+            audio.play().then(() => playBtn.textContent = '⏸').catch(() => {/* autoplay restrictions may block */ });
+        }
+        function pause() { audio.pause(); playBtn.textContent = '▶'; }
+        function togglePlay() { if (audio.paused) play(); else pause(); }
+
+        function formatTime(sec) {
+            if (!isFinite(sec)) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        function nextTrack() {
+            if (isShuffling) {
+                index = Math.floor(Math.random() * playlist.length);
+            } else {
+                index = (index + 1) % playlist.length;
+            }
+            loadTrack();
+            play();
+        }
+        function prevTrack() {
+            if (audio.currentTime > 3) { audio.currentTime = 0; return; }
+            index = (index - 1 + playlist.length) % playlist.length;
+            loadTrack(); play();
+        }
+
+        // Eventos
+        playBtn.addEventListener('click', togglePlay);
+        nextBtn.addEventListener('click', nextTrack);
+        prevBtn.addEventListener('click', prevTrack);
+        shuffleBtn.addEventListener('click', () => { isShuffling = !isShuffling; shuffleBtn.style.opacity = isShuffling ? 1 : 0.6; });
+        repeatBtn.addEventListener('click', () => { isRepeating = !isRepeating; repeatBtn.style.opacity = isRepeating ? 1 : 0.6; });
+
+        audio.addEventListener('timeupdate', () => {
+            const pct = (audio.currentTime / audio.duration) * 100 || 0;
+            fill.style.width = pct + '%';
+            currentEl.textContent = formatTime(audio.currentTime);
+            durationEl.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('ended', () => {
+            if (isRepeating) { audio.currentTime = 0; play(); return; }
+            nextTrack();
+        });
+
+        bar.addEventListener('click', (e) => {
+            const rect = bar.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const pct = x / rect.width;
+            audio.currentTime = pct * audio.duration;
+        });
+
+        // Añadir archivos locales mediante input
+        fileInput.addEventListener('change', (e) => {
+            const files = Array.from(e.target.files).filter(f => f.type.startsWith('audio/'));
+            files.forEach(f => {
+                const url = URL.createObjectURL(f);
+                playlist.push({ title: f.name.replace(/\.[^/.]+$/, ''), artist: 'Local', src: url });
+            });
+            // si la lista estaba vacía, iniciar en la primera añadida
+            if (playlist.length && !audio.src) index = Math.floor(Math.random() * playlist.length);
+            renderPlaylist();
+            loadTrack();
+        });
+
+        // Teclas simples
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') { e.preventDefault(); togglePlay(); }
+            if (e.code === 'ArrowRight') { nextTrack(); }
+            if (e.code === 'ArrowLeft') { prevTrack(); }
+        });
+
+        // Inicialización
+        renderPlaylist();
+        loadTrack();
+
+        // Sugerencia: reemplaza las rutas audio/track1.mp3 por tus archivos o URLs válidas.
+    </script>
+</body>
+
+</html>
+</div>

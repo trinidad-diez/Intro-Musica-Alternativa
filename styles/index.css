@@ -174,6 +174,10 @@ main > section > a {
     gap: 1.5rem;
 }
 
+#artistas-destacados article:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 #artistas-destacados article {
     background: var(--color-tarjeta);
     border: 1px solid var(--color-borde);
@@ -191,6 +195,7 @@ main > section > a {
 }
 
 #artistas-destacados article img {
+    grid-area: img;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -198,6 +203,7 @@ main > section > a {
 }
 
 #artistas-destacados article h4 {
+    grid-area: titulo;
     font-size: 1.1rem;
     margin: 0;
     align-self: end;
@@ -236,8 +242,10 @@ main > section > a {
 }
 
 .valor:hover {
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.06);
+    transform-origin: center;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+    z-index: 2;
 }
 
 .valor img {
@@ -258,43 +266,124 @@ main > section > a {
 #playlists article {
     background: var(--color-tarjeta);
     border: 1px solid var(--color-borde);
-    padding: 1rem;
+    padding: 0.75rem; /* Reduced padding for shorter height */
     border-radius: 0.75rem;
     text-align: center;
+    min-height: 100px; /* Set a minimum height for consistency */
 }
 
 #playlists article button {
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Adjusted margin for button */
     padding: 0.5rem 1rem;
     background-color: var(--color-acento-morado);
     color: #fff;
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+/* Más específico para asegurar que se aplique dentro de los artículos */
+#playlists article button:hover,
+#playlists article button:focus,
+#playlists article button:focus-visible {
+    background-color: var(--color-acento-rosa);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(224, 73, 153, 0.18);
+}
+
+#playlists article button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+.subculturas-populares {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    border: 1px solid var(--color-borde);
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* Use a counter to generate elegant greek markers */
+.subculturas-populares ol {
+    counter-reset: subc;
+    padding: 0;
+    margin: 0;
+    columns: 2;
+    column-gap: 2.5rem;
 }
 
 .subculturas-populares li {
-    margin: 2em;
-    list-style-type: lower-greek;
+    display: block;
+    break-inside: avoid;
+    counter-increment: subc;
+    position: relative;
+    margin: 0 0 1rem 0;
+    padding: 0.6rem 0.75rem 0.6rem 3.2rem;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.01));
+    border-radius: 0.6rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    line-height: 1.45;
+    color: var(--color-texto-muted);
 }
 
-.subculturas-populares ol {
-    padding-left: 1.5rem;
-    columns: 2;
-    column-gap: 7em;
+/* Marker styling */
+.subculturas-populares li::before {
+    content: counter(subc, lower-greek);
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.6rem;
+    height: 1.6rem;
+    display: inline-grid;
+    place-items: center;
+    background: linear-gradient(135deg, var(--color-acento-rosa), var(--color-acento-morado));
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 12px rgba(224,73,153,0.12);
 }
 
+/* Hover / focus effect for items */
+.subculturas-populares li:hover,
+.subculturas-populares li:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+}
+
+/* Decorative separator inside lists (if used) */
 .subculturas-populares ol hr {
-    border-color: var(--color-borde);
-    border-style: dashed;
-    border-top: 1px solid var(--color-borde);
+    border: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+        to right,
+        var(--color-borde),
+        var(--color-borde) 6px,
+        transparent 6px,
+        transparent 12px
+    );
     margin: 1rem 0;
-    margin: auto;
 }
 
+/* Centered paragraph style for explanatory text */
 .subculturas-populares p {
-    margin: 3em;
+    margin: 1.25rem auto 0;
     text-align: center;
+    color: white;
+    font-size: 0.95rem;
+}
+
+/* Responsive: one column on narrow screens */
+@media (max-width: 700px) {
+    .subculturas-populares ol {
+        columns: 1;
+        column-gap: 1rem;
+    }
+    .subculturas-populares li {
+        padding-left: 3rem;
+    }
 }
 
 /* Responsive */
@@ -310,4 +399,46 @@ main > section > a {
     .valor {
         flex: 1 1 100%;
     }
+}
+
+/* ALBUM CON VINYL */
+.album {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* ratio cuadrado */
+}
+
+.vinyl {
+    position: absolute;
+    top: 20%; /* Adjusted position */
+    left: 20%; /* Adjusted position */
+    width: 60%; /* Reduced size */
+    height: 60%; /* Reduced size */
+    background-image: url('https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Music-PNG/Gramophone_Vinyl_LP_Record_PNG_Transparent_Clip_Art_Image.png?m=1462983196');
+    background-size: contain;
+    background-position: center;
+    border-radius: 50%;
+    z-index: 2;
+    transition: transform 0.3s ease; /* Added transition for smooth effect */
+}
+
+.vinyl:hover {
+    animation: spinThat 5s linear infinite;
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+.vinyl .print {
+    position: absolute;
+    top: 33%;
+    left: 33%;
+    width: 34%;
+    height: 34%;
+    background-color: var(--color-acento-morado);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 5px rgba(150,150,150,0.5);
+}
+
+@keyframes spinThat {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

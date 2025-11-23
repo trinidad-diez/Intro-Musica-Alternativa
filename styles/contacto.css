@@ -130,7 +130,8 @@ h2{
 }
 .timeline-item p {
     margin: 0;
-}         
+}      
+
 /* Responsive */
 @media (max-width: 600px) {
     .timeline-container { 

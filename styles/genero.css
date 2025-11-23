@@ -1,5 +1,13 @@
 main h1,
 main h2,
 main h3{
-    margin: 2em;
+    margin-top: 2em;
+}
+
+main{
+    text-align: center;
+}
+
+li{
+    list-style: none;
 }

@@ -1,0 +1,213 @@
+:root {
+    --color-fondo: #461D3A;
+    --color-tarjeta: #502A50;
+    --color-texto: #ECD0EC;
+    --color-texto-muted: #BA71A2;
+    --color-acento-rosa: #7E2A53;
+    --color-acento-morado: #7E2A53;
+    --color-acento-verde: #FF4500;
+    --color-borde: rgba(236, 208, 236, 0.1);
+    --color-header-footer: rgba(8, 5, 12, 0.8);
+    --color-link-hover: white;
+
+    /* Mapeo a las variables usadas en la hoja existente */
+    --accent: var(--color-acento-morado);
+    --accent-2: var(--color-acento-verde);
+    --bg: linear-gradient(180deg, var(--color-fondo) 0%, rgba(30,12,30,1) 100%);
+    --card: var(--color-tarjeta);
+    --text: var(--color-texto);
+    --muted: var(--color-texto-muted);
+    --glass: rgba(236, 208, 236, 0.03);
+    --glass-2: rgba(236, 208, 236, 0.02);
+    --border: rgba(236, 208, 236, 0.06);
+    --header-footer: var(--color-header-footer);
+    --link-hover: var(--color-link-hover);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container {
+    max-width: 920px;
+    margin: 36px auto;
+    padding: 24px;
+    background: linear-gradient(180deg, rgba(236, 208, 236, 0.02), rgba(236, 208, 236, 0.01));
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(2, 6, 23, 0.6);
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 2em;
+}
+
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+p.lead {
+    margin: 6px 0 18px;
+    color: var(--muted);
+}
+
+.player {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 18px;
+    align-items: center;
+    padding: 18px;
+    background: var(--glass);
+    border-radius: 10px;
+}
+
+.cover {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(236, 208, 236, 0.02), rgba(236, 208, 236, 0.01));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+    padding: 8px;
+    background-size: contain;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.artist {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+button {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: inherit;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button.primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border: none;
+    color: var(--color-fondo);
+}
+
+.progress {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.bar {
+    height: 8px;
+    background: rgba(236, 208, 236, 0.05);
+    border-radius: 999px;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.bar>i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    width: 0%;
+}
+
+.time {
+    font-size: 12px;
+    color: var(--muted);
+    min-width: 46px;
+    text-align: right;
+}
+
+.playlist {
+    margin-top: 18px;
+    display: grid;
+    gap: 8px;
+}
+
+.track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(236, 208, 236, 0.01);
+    cursor: pointer;
+}
+
+.track:hover {
+    background: rgba(236, 208, 236, 0.02);
+}
+
+.small {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+input[type=file] {
+    display: none;
+}
+
+.add {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.add label {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: inherit;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+@media (max-width:640px) {
+    .player {
+        grid-template-columns: 1fr;
+    }
+
+    .cover {
+        width: 100%;
+        height: 120px;
+    }
+}

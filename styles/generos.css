@@ -46,7 +46,7 @@ main {
 /* Tarjetas */
 article {
     width: 20%;
-    margin: 1.5em;
+    margin: 0.5em;
     display: inline-flex;
     flex-direction: column;
     text-align: center;
