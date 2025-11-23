@@ -147,6 +147,11 @@ main > section > a {
     transition: all 0.3s ease;
 }
 
+.genero:hover {
+    box-shadow: 0 8px 20px rgba(224, 73, 153, 0.3);
+    transform: translateY(-5px);
+}
+
 .genero img {
     width: 100%;
     object-fit: cover;
@@ -186,7 +191,6 @@ main > section > a {
 }
 
 #artistas-destacados article img {
-    grid-area: img;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -194,7 +198,6 @@ main > section > a {
 }
 
 #artistas-destacados article h4 {
-    grid-area: titulo;
     font-size: 1.1rem;
     margin: 0;
     align-self: end;
